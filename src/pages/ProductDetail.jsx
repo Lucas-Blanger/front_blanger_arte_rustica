@@ -5,6 +5,7 @@ import { useCart } from '../context/CartContext';
 import PriceTag from '../components/PriceTag';
 import Loader from '../components/Loader';
 import EmptyState from '../components/EmptyState';
+import ProductReviewsSection from '../components/ProductReviewsSection';
 
 function ProductStamp({ name }) {
   const initial = name?.charAt(0)?.toUpperCase() || '?';
@@ -141,6 +142,9 @@ export default function ProductDetail() {
           </div>
         </div>
       </div>
+
+      {/* Seção de Avaliações com Resumo de IA Assíncrono */}
+      <ProductReviewsSection productId={product.id} />
     </div>
   );
 }
