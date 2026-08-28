@@ -1,75 +1,64 @@
-# React + TypeScript + Vite
+# Blanger Arte Rústica — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Loja virtual em **React + Vite + Tailwind CSS**, feita para consumir a API
+[`blanger-arte-rustica-api`](../blanger-arte-rustica-api) (Express + Sequelize + Neon).
 
-Currently, two official plugins are available:
+## Identidade visual
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Cores**: papel/creme (`paper`), tinta walnut escura (`ink`/`walnut`), laranja brasa (`ember`) como cor de ação, verde musgo (`moss`) para tags/sucesso e latão (`brass`) para detalhes.
+- **Tipografia**: `Fraunces` (serifada rústica, com itálico) para títulos, `Work Sans` para o corpo do texto e `IBM Plex Mono` para preços e rótulos — como se fossem carimbados.
+- **Elemento de assinatura**: os cards de produto são "etiquetas penduradas" (`hang-tag`), com um furo de ilhós no topo, remetendo às etiquetas de peças artesanais.
 
-## React Compiler
+## Rodando localmente
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+cp .env.example .env
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+A aplicação sobe em `http://localhost:5173` e espera a API em
+`http://localhost:3000/api/v1` (configurável via `VITE_API_URL`).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+> **Modo demonstração:** se a API não estiver no ar, a Home e a Loja carregam
+> automaticamente um catálogo de exemplo (`src/data/demoProducts.js`), para
+> que a vitrine nunca fique vazia durante o desenvolvimento do front.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Build de produção
+
+```bash
+npm run build
+npm run preview
+```
+
+## Estrutura
 
 ```
+src/
+├── api/            # clientes axios (auth, products, addresses, orders)
+├── assets/         # logo da marca
+├── components/     # Header, Footer, Layout, ProductCard, PriceTag, etc.
+├── context/         # AuthContext (sessão/JWT) e CartContext (carrinho)
+├── data/            # produtos de demonstração (fallback offline)
+├── pages/            # Home, Shop, ProductDetail, Cart, Checkout, Login,
+│                      # Register, Account, NotFound
+├── utils/            # formatPrice
+├── App.jsx           # definição de rotas
+├── main.jsx          # bootstrap (providers + router)
+└── index.css         # tema Tailwind + componentes utilitários
+```
+
+## Fluxos implementados
+
+- **Autenticação**: registro, login, sessão persistida em `localStorage`, rotas protegidas (`/checkout`, `/conta`).
+- **Catálogo**: listagem com busca e filtro por categoria, detalhe de produto.
+- **Carrinho**: adicionar/remover/alterar quantidade, persistido em `localStorage`.
+- **Checkout**: seleção ou cadastro de endereço de entrega, escolha de forma de pagamento, criação do pedido via API.
+- **Conta**: histórico de pedidos com cancelamento, gerenciamento de endereços, dados de perfil.
+
+## Próximos passos sugeridos
+
+- Upload/preview de foto de perfil e produtos reais com imagem
+- Painel administrativo (gestão de produtos/pedidos) como área separada
+- Testes end-to-end (Playwright/Cypress) cobrindo o fluxo de compra
+- Internacionalização, caso a loja passe a atender fora do Brasil
