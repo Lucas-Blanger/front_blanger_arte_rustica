@@ -1,29 +1,53 @@
-import { Link } from 'react-router-dom';
-import logo from '../assets/logo.jpeg';
+import { Link } from "react-router-dom";
+import logo from "../assets/logo.jpeg";
 
 export default function Footer() {
+  // Link para onde a página /como-fiz está hospedada
+  const comoFizUrl =
+    "https://blanger-arte-rustica-comofiz.s3.amazonaws.com/index.html";
+
   return (
     <footer className="mt-24 border-t border-walnut/15 bg-walnut text-paper">
       <div className="mx-auto max-w-6xl px-5 py-14">
         <div className="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
-              <img src={logo} alt="Blanger Arte Rústica" className="h-10 w-10 rounded-full object-cover" />
+              <img
+                src={logo}
+                alt="Blanger Arte Rústica"
+                className="h-10 w-10 rounded-full object-cover"
+              />
               <span className="font-display text-lg">Blanger Arte Rústica</span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-paper/70">
-              Móveis e objetos feitos à mão em madeira de demolição e ferro forjado.
-              Cada marca no material é assinatura de quem fez.
+              Móveis e objetos feitos à mão em madeira de demolição e ferro
+              forjado. Cada marca no material é assinatura de quem fez.
             </p>
           </div>
 
           <div>
             <p className="eyebrow text-brassLight">Navegação</p>
             <ul className="mt-4 space-y-2 text-sm text-paper/80">
-              <li><Link to="/" className="hover:text-paper">Início</Link></li>
-              <li><Link to="/loja" className="hover:text-paper">Loja</Link></li>
-              <li><Link to="/carrinho" className="hover:text-paper">Carrinho</Link></li>
-              <li><Link to="/conta" className="hover:text-paper">Minha conta</Link></li>
+              <li>
+                <Link to="/" className="hover:text-paper">
+                  Início
+                </Link>
+              </li>
+              <li>
+                <Link to="/loja" className="hover:text-paper">
+                  Loja
+                </Link>
+              </li>
+              <li>
+                <Link to="/carrinho" className="hover:text-paper">
+                  Carrinho
+                </Link>
+              </li>
+              <li>
+                <Link to="/conta" className="hover:text-paper">
+                  Minha conta
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -37,10 +61,21 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 h-px w-full bg-paper/15" />
-        <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-paper/50">
-          © {new Date().getFullYear()} Blanger Arte Rústica — Feito à mão, peça por peça.
-        </p>
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-paper/15 pt-8 sm:flex-row">
+          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-paper/50">
+            © {new Date().getFullYear()} Blanger Arte Rústica — Feito à mão,
+            peça por peça.
+          </p>
+
+          <a
+            href={comoFizUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block rounded-md border border-brassLight bg-brassLight/10 px-5 py-2.5 font-mono text-xs font-semibold text-brassLight transition-colors hover:bg-brassLight hover:text-walnut"
+          >
+            Como Fiz — Ver Projeto
+          </a>
+        </div>
       </div>
     </footer>
   );
