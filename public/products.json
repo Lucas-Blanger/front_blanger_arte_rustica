@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "categoryId": 1,
+    "name": "Mesa de Jantar Demolição 8 Lugares",
+    "slug": "mesa-de-jantar-demolicao-8-lugares",
+    "description": "Mesa de jantar fabricada em madeira de demolição Peroba Rosa, com pernas robustas de 12cm e acabamento em verniz fosco.",
+    "price": 2490,
+    "stock": 4,
+    "sku": "MESA-DEM-08",
+    "imageUrl": "https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf",
+    "material": "Peroba Rosa Demolição",
+    "dimensions": "220cm x 100cm x 78cm",
+    "isActive": true,
+    "category": {
+      "id": 1,
+      "name": "Mesas Rústicas",
+      "slug": "mesas-rusticas",
+      "description": "Mesas de jantar e centro feitas em madeira maciça e demolição."
+    }
+  },
+  {
+    "id": 2,
+    "categoryId": 2,
+    "name": "Banco Rústico Maciço 3 Lugares",
+    "slug": "banco-rustico-macico-3-lugares",
+    "description": "Banco estofado em madeira maciça com nós aparentes e alta durabilidade.",
+    "price": 890,
+    "stock": 8,
+    "sku": "BNC-MAC-03",
+    "imageUrl": "https://images.unsplash.com/photo-1538688525198-9b88f6f53126",
+    "material": "Peroba Rosa",
+    "dimensions": "160cm x 45cm x 48cm",
+    "isActive": true,
+    "category": {
+      "id": 2,
+      "name": "Cadeiras e Bancos",
+      "slug": "cadeiras-e-bancos",
+      "description": "Cadeiras, bancos maciços e banquetas com acabamento rústico fino."
+    }
+  },
+  {
+    "id": 3,
+    "categoryId": 3,
+    "name": "Aparador Rústico 2 Gavetas",
+    "slug": "aparador-rustico-2-gavetas",
+    "description": "Aparador elegante para hall de entrada ou sala de jantar com puxadores de ferro forjado.",
+    "price": 1350,
+    "stock": 5,
+    "sku": "APR-RUS-02",
+    "imageUrl": "https://images.unsplash.com/photo-1595428774223-ef52624120d2",
+    "material": "Madeira de Reuso",
+    "dimensions": "140cm x 40cm x 85cm",
+    "isActive": true,
+    "category": {
+      "id": 3,
+      "name": "Aparadores e Racks",
+      "slug": "aparadores-e-racks",
+      "description": "Móveis para sala de estar e recepção produzidos em madeira nobre."
+    }
+  },
+  {
+    "id": 4,
+    "categoryId": 5,
+    "name": "Luminária de Tronco Entalhado",
+    "slug": "luminaria-de-tronco-entalhado",
+    "description": "Luminária artesanal feita de tronco de árvore trabalhado com lâmpada filamento de carbono estilo Edison.",
+    "price": 320,
+    "stock": 12,
+    "sku": "LUM-TRN-01",
+    "imageUrl": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c",
+    "material": "Tronco Natural Tratado",
+    "dimensions": "30cm x 25cm x 45cm",
+    "isActive": true,
+    "category": {
+      "id": 5,
+      "name": "Iluminação Rústica",
+      "slug": "iluminacao-rustica",
+      "description": "Luminárias de tronco, pendentes e arandelas rústicas."
+    }
+  },
+  {
+    "id": 5,
+    "categoryId": 4,
+    "name": "Espelho Moldura Rústica Trançada",
+    "slug": "espelho-moldura-rustica-trancada",
+    "description": "Espelho de parede decorativo com moldura em ripas de madeira entalhada à mão.",
+    "price": 450,
+    "stock": 10,
+    "sku": "ESP-MLD-01",
+    "imageUrl": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6",
+    "material": "Madeira Rústica e Cristal 4mm",
+    "dimensions": "90cm x 70cm x 5cm",
+    "isActive": true,
+    "category": {
+      "id": 4,
+      "name": "Decoração em Madeira",
+      "slug": "decoracao-em-madeira",
+      "description": "Espelhos, quadros, esculturas e artigos artesanais de madeira."
+    }
+  },
+  {
+    "id": 6,
+    "categoryId": 3,
+    "name": "Rack Rústico para TV até 65 Polegadas",
+    "slug": "rack-rustico-para-tv-ate-65-polegadas",
+    "description": "Rack para sala com portas de travamento rústico e nichos para aparelhos eletrônicos.",
+    "price": 1890,
+    "stock": 3,
+    "sku": "RCK-TV-65",
+    "imageUrl": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91",
+    "material": "Peroba Rosa e Estrutura de Ferro",
+    "dimensions": "180cm x 45cm x 60cm",
+    "isActive": true,
+    "category": {
+      "id": 3,
+      "name": "Aparadores e Racks",
+      "slug": "aparadores-e-racks",
+      "description": "Móveis para sala de estar e recepção produzidos em madeira nobre."
+    }
+  }
+]
