@@ -4,7 +4,7 @@ import logo from "../assets/logo.jpeg";
 export default function Footer() {
   // Link para onde a página /como-fiz está hospedada
   const comoFizUrl =
-    "https://blanger-arte-rustica-comofiz.s3.amazonaws.com/index.html";
+    "https://pub-ea1585d30d314fb8b2709a10120e9b61.r2.dev/como-fiz/index.html";
 
   return (
     <footer className="mt-24 border-t border-walnut/15 bg-walnut text-paper">
