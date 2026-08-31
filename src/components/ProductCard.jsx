@@ -65,13 +65,13 @@ export default function ProductCard({ product, className = "" }) {
         </div>
       </Link>
 
-      <div className="mt-4 flex items-center justify-between gap-2 px-4 pb-5">
+      <div className="mt-4 flex flex-col gap-2.5 px-4 pb-5 sm:flex-row sm:items-center sm:justify-between">
         <PriceTag value={product.price} size="sm" />
         <button
           type="button"
           onClick={handleBuy}
           disabled={outOfStock}
-          className={`rounded-sm px-3.5 py-1.5 font-body text-xs font-medium transition-all ${
+          className={`w-full sm:w-auto text-center shrink-0 rounded-sm px-3 py-1.5 font-body text-xs font-medium transition-all ${
             added
               ? "bg-moss text-paper"
               : outOfStock
