@@ -5,13 +5,18 @@ let fallbackCache = null;
 async function fetchFallbackData() {
   if (fallbackCache) return fallbackCache;
   try {
-    let res = await fetch('/product.json');
-    if (!res.ok) {
-      res = await fetch('/products.json');
+    let res = await fetch('/products.json');
+    let contentType = res.headers.get('content-type') || '';
+    
+    if (!res.ok || !contentType.includes('application/json')) {
+      res = await fetch('/product.json');
+      contentType = res.headers.get('content-type') || '';
     }
-    if (!res.ok) {
-      throw new Error(`HTTP ${res.status}`);
+    
+    if (!res.ok || !contentType.includes('application/json')) {
+      throw new Error(`HTTP ${res.status} - Content-Type inválido`);
     }
+    
     const json = await res.json();
     let products = [];
     let categories = [];
@@ -36,7 +41,7 @@ async function fetchFallbackData() {
     fallbackCache = { products, categories };
     return fallbackCache;
   } catch (err) {
-    console.error('Erro ao buscar product.json de fallback:', err);
+    console.error('Erro ao buscar JSON de fallback dos produtos:', err);
     return { products: [], categories: [] };
   }
 }
